@@ -1,0 +1,9 @@
+edu.bu.hw3.linalg
+edu.bu.hw3.nn
+edu.bu.hw3.nn.layers
+edu.bu.hw3.nn.losses
+edu.bu.hw3.nn.models
+edu.bu.hw3.nn.optimizers
+edu.bu.hw3.nn.test
+edu.bu.hw3.streaming
+edu.bu.hw3.utils

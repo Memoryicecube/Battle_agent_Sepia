@@ -1,0 +1,45 @@
+<Configuration>
+	<Map>data/hw3/CombatMap.xml</Map>
+	<Player Id="0">
+		<AgentClass>
+			<ClassName>hw3.QAgent</ClassName>
+			<Argument>0</Argument>
+			<Argument>not important value at the moment pls ignore</Argument> <!-- This arg is for the streamer, it will be important later for tournament play -->
+			<Argument>params/params.txt</Argument> <!-- this is where the agent will save the model to, so be careful! It will overwrite whatever contents are in this file! -->
+			<Argument>10</Argument> <!-- please change this number to some other multiple of 10 to play lots of games (testing after every 10 training episodes)
+			                             If you change this value, please also change line 35 (the value of experiment.NumEpisodes) to the same value-->
+			<Argument>false</Argument> <!-- please change this to True when you want to load in a previously saved mode saved at the path of the 3rd arg -->
+		</AgentClass>
+	</Player>
+	<Player Id="1">
+		<AgentClass>
+			<ClassName>hw3.BadCombatAgent</ClassName>
+			<Argument>1</Argument>
+		</AgentClass>
+	</Player>
+	<Player Id="0">
+		<AgentClass>
+			<ClassName>edu.cwru.sepia.agent.visual.VisualAgent</ClassName>
+			<Argument>true</Argument>
+			<Argument>false</Argument>
+		</AgentClass>
+	</Player>
+	<ModelParameters>
+		<Conquest>true</Conquest>
+		<Midas>false</Midas>
+		<ManifestDestiny>false</ManifestDestiny>
+		<TimeLimit>1000000</TimeLimit>
+	</ModelParameters>
+	<Runner>
+		<RunnerClass>edu.cwru.sepia.experiment.ExampleRunner</RunnerClass>
+		<Parameter Name="experiment.NumEpisodes" Value="10"/>
+		<Parameter Name="experiment.EpisodesPerSave" Value="1"/>
+		<Parameter Name="experiment.SaveAgents" Value="false"/>
+		<Parameter Name="experiment.episodesperagentsave" Value="4" />
+		<Parameter Name="experiment.episodesperreplaysave" Value="4" />
+		<Parameter Name="experiment.save.replaydirectory" Value="saves/test1" />
+		<Parameter Name="experiment.save.agentdirectory" Value="saves/test1" />
+		<Parameter Name="experiment.temp.thing" Value="saves/test1" />
+		<Parameter Name="environment.model.class" Value="edu.cwru.sepia.environment.model.BestEffortModel" />
+	</Runner>
+</Configuration>
